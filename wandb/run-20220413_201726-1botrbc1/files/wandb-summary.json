@@ -1,1 +1,0 @@
-{"negative log likelihood": 10.180825604438782, "_timestamp": 1649881698, "_runtime": 652, "_step": 4499, "test MSE": 2026.8319091796875, "train MSE": 2297.197998046875, "_wandb": {"runtime": 650}}

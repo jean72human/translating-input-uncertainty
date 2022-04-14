@@ -38,11 +38,11 @@ def main():
 
                             with run:
 
-                                filename_train = os.path.join(dirname,f"data/exp{experiment}_data_train_{scale}.csv")
-                                filename_test = os.path.join(dirname,f"data/exp{experiment}_data_test_{scale}.csv")
+                                filename_train = os.path.join(dirname,"data/exp{}_data_train_{}.csv".format(experiment,scale))
+                                filename_test = os.path.join(dirname,"data/exp{}_data_test_{}.csv".format(experiment,scale))
 
-                                filename_train_s = os.path.join(dirname,f"data/exp{experiment}_data_train_s_{scale}.csv")
-                                filename_test_s = os.path.join(dirname,f"data/exp{experiment}_data_test_s_{scale}.csv")
+                                filename_train_s = os.path.join(dirname,"data/exp{}_data_train_s_{}.csv".format(experiment,scale))
+                                filename_test_s = os.path.join(dirname,"data/exp{}_data_test_s_{}.csv".format(experiment,scale))
 
                                 data = pd.read_csv(filename_train)
                                 data_test = pd.read_csv(filename_test)
