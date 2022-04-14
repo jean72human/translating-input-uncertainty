@@ -13,11 +13,13 @@ import wandb
 api = wandb.Api()
 
 import sys
+import os
 
 experiment = int(sys.argv[1])
 scale = str(sys.argv[2])
 
 def main():
+    dirname = os.path.dirname(__file__)
     for init in ['random','closed form']:
         for opt in ['sgd','adam']:
             for lr in [1e-1,1e-2,1e-3,1e-4,1e-5,1e-7,1e-9]:
@@ -36,11 +38,11 @@ def main():
 
                             with run:
 
-                                filename_train = f'data/exp{experiment}_data_train_{scale}.csv'
-                                filename_test = f'data/exp{experiment}_data_test_{scale}.csv'
+                                filename_train = os.path.join(dirname,f"data/exp{experiment}_data_train_{scale}.csv")
+                                filename_test = os.path.join(dirname,f"data/exp{experiment}_data_test_{scale}.csv")
 
-                                filename_train_s = f'data/exp{experiment}_data_train_s_{scale}.csv'
-                                filename_test_s = f'data/exp{experiment}_data_test_s_{scale}.csv'
+                                filename_train_s = os.path.join(dirname,f"data/exp{experiment}_data_train_s_{scale}.csv")
+                                filename_test_s = os.path.join(dirname,f"data/exp{experiment}_data_test_s_{scale}.csv")
 
                                 data = pd.read_csv(filename_train)
                                 data_test = pd.read_csv(filename_test)
